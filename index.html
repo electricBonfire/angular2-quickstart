@@ -15,6 +15,7 @@
   <script src="node_modules/rxjs/bundles/Rx.min.js"></script>
 
   <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+
   <!-- 2. Configure SystemJS -->
   <script>
     System.config({
@@ -22,9 +23,14 @@
         app: {
           format: 'register',
           defaultExtension: 'js'
-        }
+        },
+        'node_modules/ng2-file-upload': {
+              format: 'cjs',
+              defaultExtension: 'js'
+         }
       },
       map: {
+       'ng2-file-upload': 'node_modules/ng2-file-upload/ng2-file-upload.js',
         moment: 'node_modules/moment/moment.js',
         "@angular/core": "node_modules/@angular/core/core.umd.js",
         "@angular/common": "node_modules/@angular/common/common.umd.js",
@@ -36,8 +42,11 @@
 //        "@angular/platform-browser/src/animate/animation_builder": "node_modules/@angular/platform-browser/src/animate/animation_builder.js"
       }
     });
-    System.import('app/boot')
-      .then(null, console.error.bind(console));
+
+    System.import('/node_modules/ng2-file-upload/ng2-file-upload').then(function(){
+        System.import('app/boot');
+    }, console.error.bind(console));
+
   </script>
 
 </head>

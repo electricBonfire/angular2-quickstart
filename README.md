@@ -1,8 +1,8 @@
-# angular2-quickstart
+# ng2-file-upload SystemJS Loading Example
 
-This tiny repo is done according to angular2 quickstart guide
-just to show how simple it is to use angular2 with 3rd party ng2-* modules
-like this one: https://github.com/valor-software/ng2-bootstrap
+This tiny repo is a fork of https://github.com/valor-software/angular2-quickstart and shows how to load ng2-file-upload using SystemJS
+
+https://github.com/valor-software/ng2-file-upload/
 
 # Quick start
 
